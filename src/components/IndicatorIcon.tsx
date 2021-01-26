@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { media } from './Breakpoints'
 import { colors, shadows } from './theme'
 
 const IndicatorIcon: React.FC = () => {

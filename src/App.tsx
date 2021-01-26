@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from './components/Breakpoints'
-import { colors } from './components/theme'
 
 // Components
 import PlatingCanvas from './components/PlatingCanvas'

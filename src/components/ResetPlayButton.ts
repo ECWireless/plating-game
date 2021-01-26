@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { media } from './Breakpoints'
 import { colors, shadows } from './theme'
 
 export const ResetPlayButton = styled.button`
