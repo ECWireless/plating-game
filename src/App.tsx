@@ -3,18 +3,17 @@ import styled from 'styled-components'
 import { media } from './components/Breakpoints'
 import { colors } from './components/theme'
 
+// Components
+import PlatingCanvas from './components/PlatingCanvas'
+import Sidebar from './components/Sidebar'
+import SelectionBox from './components/SelectionBox'
+
 function App() {
 	return (
 		<StyledGameContainer>
-			<StyledPlatingCanvas>
-				Plating Canvas
-			</StyledPlatingCanvas>
-			<StyledSidebar>
-				Sidebar
-			</StyledSidebar>
-			<StyledSelectionBox>
-				Selection Box
-			</StyledSelectionBox>
+			<PlatingCanvas />
+			<Sidebar />
+			<SelectionBox />
 		</StyledGameContainer>
 	);
 }
@@ -30,22 +29,4 @@ const StyledGameContainer = styled.div`
 		grid-template-columns: 1fr 50rem;
 		grid-template-rows: 80rem 40rem;
 	`}
-`
-
-const StyledPlatingCanvas = styled.div`
-	border: 2px solid ${colors.blue};
-	grid-column: 1 / 2;
-	grid-row: 1 / 2;
-`
-
-const StyledSelectionBox = styled.div`
-	border: 2px solid ${colors.blue};
-	grid-column: 1 / 3;
-	grid-row: 2 / 3;
-`
-
-const StyledSidebar = styled.div`
-	border: 2px solid ${colors.blue};
-	grid-column: 2 / 2;
-	grid-row: 1 / 2;
 `
