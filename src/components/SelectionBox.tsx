@@ -6,13 +6,22 @@ const ITEMS = [
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'
 ]
 
-const SelectionBox: React.FC = () => {
+const SelectionBox: React.FC<any> = ({
+    drag,
+}) => {
     return (
         <StyledSelectionBox>
             {ITEMS.map(item => {
                 return (
-                    <StyledItemContainer>
-                        <StyledItemPhoto draggable={"true"} style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}} />
+                    <StyledItemContainer key={item}>
+                        <StyledPhotoContainer>
+                            <StyledItemPhoto
+                                id={`food-${item}`}
+                                draggable={"true"}
+                                onDragStart={(e:any) => drag(e)}
+                                style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}}
+                            />
+                        </StyledPhotoContainer>
                     </StyledItemContainer>
                 )
             })}
@@ -58,10 +67,15 @@ const StyledItemContainer = styled.div`
     }
 `
 
+const StyledPhotoContainer = styled.div`
+    height: 7rem;
+    width: 7rem;
+`
+
 const StyledItemPhoto = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 7rem;
-    width: 7rem;
+    height: 100%;
+    width: 100%;
 `

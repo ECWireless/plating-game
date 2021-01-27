@@ -10,7 +10,7 @@ export const SelectionButton = () => {
             </StyledButton>
             <StyledLine />
             <StyledSvg id="selection-svg" viewBox="0 0 29 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 2L15.125 16L27 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 2L15.125 16L27 2" stroke="white" strokeWidth={'3'} strokeLinecap={'round'} strokeLinejoin={'round'} />
             </StyledSvg>
         </SelectionButtonContainer>
     )
