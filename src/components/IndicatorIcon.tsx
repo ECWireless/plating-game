@@ -30,7 +30,6 @@ const StyledIndicatorContainer = styled.div`
 
     &:hover {
         border: 2px solid ${colors.green};
-        cursor: pointer;
     }
 `
 
