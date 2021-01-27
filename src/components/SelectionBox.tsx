@@ -12,7 +12,7 @@ const SelectionBox: React.FC = () => {
             {ITEMS.map(item => {
                 return (
                     <StyledItemContainer>
-                        <StyledItemPhoto style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}} />
+                        <StyledItemPhoto draggable={"true"} style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}} />
                     </StyledItemContainer>
                 )
             })}
