@@ -7,9 +7,54 @@ import PlatingCanvas from './components/PlatingCanvas'
 import Sidebar from './components/Sidebar'
 import SelectionBox from './components/SelectionBox'
 
+interface ICanvas {
+	largePortion: {
+		active: boolean;
+		item: string;
+	};
+	smallPortion1: {
+		active: boolean;
+		item: string;
+	};
+	smallPortion2: {
+		active: boolean;
+		item: string;
+	};
+	cup: {
+		active: boolean;
+		item: string;
+	};
+	bowl: {
+		active: boolean;
+		item: string;
+	};
+}
+
 function App() {
-	const [bowlVisible, setBowlVisible] = React.useState(true)
-	const [cupVisible, setCupVisible] = React.useState(true)
+	const [canvasItems, setCanvasItems] = React.useState<ICanvas>({
+		largePortion: {
+			active: false,
+			item: '',
+		},
+		smallPortion1: {
+			active: false,
+			item: '',
+		},
+		smallPortion2: {
+			active: false,
+			item: '',
+		},
+		cup: {
+			active: false,
+			item: '',
+		},
+		bowl: {
+			active: false,
+			item: '',
+		},
+	})
+
+	const [recentItem, setRecentItem] = React.useState('')
 
 	const allowDrop = (e: any) => {
 		e.preventDefault();
@@ -22,24 +67,69 @@ function App() {
 	const drop = (e: any) => {
 		e.preventDefault();
 		let data = e.dataTransfer.getData("text");
-		e.target.appendChild(document.getElementById(data));
 
-		if (e.target.id === 'placement-cup') {
-			setCupVisible(false)
+		if (data === '') {
+			return
+		} else if (e.target.id === 'placement-large') {
+			setCanvasItems(prev => ({
+				...prev,
+				largePortion: {
+					active: true,
+					item: data
+				}
+			}))
+			setRecentItem('largePortion')
+		} else if (e.target.id === 'placement-small-1') {
+			setCanvasItems(prev => ({
+				...prev,
+				smallPortion1: {
+					active: true,
+					item: data
+				}
+			}))
+			setRecentItem('smallPortion1')
+		} else if (e.target.id === 'placement-small-2') {
+			setCanvasItems(prev => ({
+				...prev,
+				smallPortion2: {
+					active: true,
+					item: data
+				}
+			}))
+			setRecentItem('smallPortion2')
+		} else if (e.target.id === 'placement-cup') {
+			setCanvasItems(prev => ({
+				...prev,
+				cup: {
+					active: true,
+					item: data
+				}
+			}))
+			setRecentItem('cup')
 		} else if (e.target.id === 'placement-bowl') {
-			setBowlVisible(false)
+			setCanvasItems(prev => ({
+				...prev,
+				bowl: {
+					active: true,
+					item: data
+				}
+			}))
+			setRecentItem('bowl')
 		}
+
 	}
 
 	return (
 		<StyledGameContainer>
 			<PlatingCanvas
-				bowlVisible={bowlVisible}
-				cupVisible={cupVisible}
-				allowDrop={(e: any) => allowDrop(e)} drop={(e: any) => drop(e)}
+				drop={(e: any) => drop(e)}
+				drag={(e: any) => drag(e)}
+				canvasItems={canvasItems}
+				setCanvasItems={setCanvasItems}
+				allowDrop={(e: any) => allowDrop(e)}
 			/>
-			<Sidebar />
-			<SelectionBox drag={(e: any) => drag(e)} />
+			<Sidebar recentItem={recentItem} setCanvasItems={setCanvasItems} />
+			<SelectionBox canvasItems={canvasItems} drag={(e: any) => drag(e)} />
 		</StyledGameContainer>
 	);
 }

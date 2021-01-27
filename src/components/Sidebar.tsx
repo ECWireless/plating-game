@@ -8,10 +8,83 @@ import { ResetPlayButton } from './ResetPlayButton'
 import { SelectionButton } from './SelectionButton'
 import { H1, H2, P1 } from './Typography'
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<any> = ({
+    recentItem,
+    setCanvasItems,
+}) => {
+
+    const onResetGame = () => {
+        setCanvasItems((prev: any) => ({
+            ...prev,
+            largePortion: {
+                active: false,
+                item: '',
+            },
+            smallPortion1: {
+                active: false,
+                item: '',
+            },
+            smallPortion2: {
+                active: false,
+                item: '',
+            },
+            cup: {
+                active: false,
+                item: '',
+            },
+            bowl: {
+                active: false,
+                item: '',
+            },
+        }))
+    }
+
+    const onRemoveRecentItem = () => {
+        if (recentItem === 'largePortion') {
+            setCanvasItems((prev: any) => ({
+				...prev,
+				largePortion: {
+					active: false,
+					item: ''
+				}
+			}))
+        } else if (recentItem === 'smallPortion1') {
+            setCanvasItems((prev: any) => ({
+				...prev,
+				smallPortion1: {
+					active: false,
+					item: ''
+				}
+			}))
+        } else if (recentItem === 'smallPortion2') {
+            setCanvasItems((prev: any) => ({
+				...prev,
+				smallPortion2: {
+					active: false,
+					item: ''
+				}
+			}))
+        } else if (recentItem === 'cup') {
+            setCanvasItems((prev: any) => ({
+				...prev,
+				cup: {
+					active: false,
+					item: ''
+				}
+			}))
+        } else if (recentItem === 'bowl') {
+            setCanvasItems((prev: any) => ({
+				...prev,
+				bowl: {
+					active: false,
+					item: ''
+				}
+			}))
+        }
+    }
     return (
         <StyledSidebar>
-            <ResetPlayButton>Reset and Play Again</ResetPlayButton>
+            <ResetPlayButton onClick={onResetGame}>Reset and Play Again</ResetPlayButton>
             <StyledTextContainer>
                 <H2>Pick meal type:</H2>
             </StyledTextContainer>
@@ -22,7 +95,7 @@ const Sidebar: React.FC = () => {
                 <H1 bold={'true'}>Correct!</H1>
             </StyledTextContainer>
             <StyledRemoveButtonContainer>
-                <RemoveButton>Remove Item</RemoveButton>
+                <RemoveButton onClick={onRemoveRecentItem}>Remove Item</RemoveButton>
             </StyledRemoveButtonContainer>
             <P1>Great job! Cucumbers are a non-starchy food perfect for filling half your plate.</P1>
         </StyledSidebar>

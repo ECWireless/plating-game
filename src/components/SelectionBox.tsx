@@ -3,26 +3,45 @@ import styled from 'styled-components'
 import { colors, shadows } from '../components/theme'
 
 const ITEMS = [
-    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'
+    'food-1', 'food-2', 'food-3', 'food-4', 'food-5', 'food-6', 'food-7', 'food-8', 'food-9', 'food-10', 'food-11', 'food-12', 'food-13', 'food-14'
 ]
 
 const SelectionBox: React.FC<any> = ({
+    canvasItems,
     drag,
 }) => {
     return (
         <StyledSelectionBox>
             {ITEMS.map(item => {
                 return (
-                    <StyledItemContainer key={item}>
-                        <StyledPhotoContainer>
-                            <StyledItemPhoto
-                                id={`food-${item}`}
-                                draggable={"true"}
-                                onDragStart={(e:any) => drag(e)}
-                                style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}}
-                            />
-                        </StyledPhotoContainer>
-                    </StyledItemContainer>
+                    <>
+                        {canvasItems.largePortion.item !== item
+                        && canvasItems.smallPortion1.item !== item 
+                        && canvasItems.smallPortion2.item !== item
+                        && canvasItems.cup.item !== item
+                        && canvasItems.bowl.item !== item
+                            ? <StyledItemContainer key={item}>
+                                <StyledPhotoContainer>
+                                    <StyledItemPhoto
+                                        id={`${item}`}
+                                        draggable={"true"}
+                                        onDragStart={(e:any) => drag(e)}
+                                        style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}}
+                                    />
+                                </StyledPhotoContainer>
+                            </StyledItemContainer>
+                            : <StyledItemContainerInactive key={item}>
+                                <StyledPhotoContainer>
+                                    <StyledItemPhotoInactive
+                                        id={`${item}`}
+                                        draggable={"true"}
+                                        onDragStart={(e:any) => drag(e)}
+                                        style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}}
+                                    />
+                                </StyledPhotoContainer>
+                            </StyledItemContainerInactive>
+                        }
+                    </>
                 )
             })}
         </StyledSelectionBox>
@@ -67,6 +86,18 @@ const StyledItemContainer = styled.div`
     }
 `
 
+const StyledItemContainerInactive = styled.div`
+    align-items: center;
+    background: #EAEAEA;
+    border: 2px solid #EAEAEA;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    height: 12rem;
+    width: 12rem;
+    margin: 0 3rem 3rem;
+`
+
 const StyledPhotoContainer = styled.div`
     height: 7rem;
     width: 7rem;
@@ -77,5 +108,14 @@ const StyledItemPhoto = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     height: 100%;
+    width: 100%;
+`
+
+const StyledItemPhotoInactive = styled.div`
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    opacity: .5;
     width: 100%;
 `
