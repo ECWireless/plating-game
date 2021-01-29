@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, shadows } from './theme'
+import { colors, shadows } from '../theme'
 
 export const ResetPlayButton = styled.button`
     background: ${colors.green};

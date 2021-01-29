@@ -7,28 +7,8 @@ import PlatingCanvas from './components/PlatingCanvas'
 import Sidebar from './components/Sidebar'
 import SelectionBox from './components/SelectionBox'
 
-interface ICanvas {
-	largePortion: {
-		active: boolean;
-		item: string;
-	};
-	smallPortion1: {
-		active: boolean;
-		item: string;
-	};
-	smallPortion2: {
-		active: boolean;
-		item: string;
-	};
-	cup: {
-		active: boolean;
-		item: string;
-	};
-	bowl: {
-		active: boolean;
-		item: string;
-	};
-}
+// Interfaces
+import { ICanvas } from './components/faces'
 
 function App() {
 	const [canvasItems, setCanvasItems] = React.useState<ICanvas>({
@@ -119,14 +99,59 @@ function App() {
 
 	}
 
+	const onRemoveItem = (removedItem: string) => {
+        if (removedItem === 'largePortion') {
+            setCanvasItems((prev: any) => ({
+                ...prev,
+                largePortion: {
+                    active: false,
+                    item: ''
+                }
+            }))
+        } else if (removedItem === 'smallPortion1') {
+            setCanvasItems((prev: any) => ({
+                ...prev,
+                smallPortion1: {
+                    active: false,
+                    item: ''
+                }
+            }))
+        } else if (removedItem === 'smallPortion2') {
+            setCanvasItems((prev: any) => ({
+                ...prev,
+                smallPortion2: {
+                    active: false,
+                    item: ''
+                }
+            }))
+        } else if (removedItem === 'cup') {
+            setCanvasItems((prev: any) => ({
+                ...prev,
+                cup: {
+                    active: false,
+                    item: ''
+                }
+            }))
+        } else if (removedItem === 'bowl') {
+            setCanvasItems((prev: any) => ({
+                ...prev,
+                bowl: {
+                    active: false,
+                    item: ''
+                }
+            }))
+        }
+    }
+
 	return (
 		<StyledGameContainer>
 			<PlatingCanvas
-				drop={(e: any) => drop(e)}
-				drag={(e: any) => drag(e)}
-				canvasItems={canvasItems}
-				setCanvasItems={setCanvasItems}
 				allowDrop={(e: any) => allowDrop(e)}
+				canvasItems={canvasItems}
+				drag={(e: any) => drag(e)}
+				drop={(e: any) => drop(e)}
+				onRemoveItem={onRemoveItem}
+				setCanvasItems={setCanvasItems}
 			/>
 			<Sidebar recentItem={recentItem} setCanvasItems={setCanvasItems} />
 			<SelectionBox canvasItems={canvasItems} drag={(e: any) => drag(e)} />
