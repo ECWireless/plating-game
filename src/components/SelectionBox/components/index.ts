@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import { colors, shadows } from '../../../components/theme'
 
+export const StyledLabelContainer = styled.p`
+    position: absolute;
+    bottom: -4.5rem;
+    opacity: 0;
+    transition: all .3s ease;
+`
+
 export const StyledSelectionBox = styled.div`
     align-items: center;
     justify-content: center;
@@ -13,7 +20,7 @@ export const StyledSelectionBox = styled.div`
     padding: 4rem 4rem 6rem;
 `
 
-export const StyledItemContainer = styled.div`
+export const StyledItemContainer = styled.div`;
     align-items: center;
     border: 2px solid ${colors.white};
     border-radius: 50%;
@@ -21,14 +28,20 @@ export const StyledItemContainer = styled.div`
     display: flex;
     justify-content: center;
     height: 12rem;
+    position: relative;
     width: 12rem;
-    margin: 0 3rem 3rem;
+    margin: 0 3rem 5rem;
     transition: all .3s ease;
 
     &:hover {
         border: 2px solid ${colors.blue};
         box-shadow: ${shadows.buttonHover};
         cursor: grab;
+
+        #item-text {
+            opacity: 1;
+            transform: translateY(2.5rem);
+        }
     }
 
     &:active {
@@ -46,12 +59,18 @@ export const StyledItemContainerInactive = styled.div`
     justify-content: center;
     height: 12rem;
     width: 12rem;
-    margin: 0 3rem 3rem;
+    margin: 0 3rem 5rem;
 `
 
 export const StyledPhotoContainer = styled.div`
     height: 7rem;
     width: 7rem;
+
+    &:hover {
+        #item-text {
+            color: red;
+        }
+    }
 `
 
 export const StyledItemPhoto = styled.div`
@@ -60,6 +79,12 @@ export const StyledItemPhoto = styled.div`
     background-size: contain;
     height: 100%;
     width: 100%;
+
+    &:hover {
+        #item-text {
+            color: red;
+        }
+    }
 `
 
 export const StyledItemPhotoInactive = styled.div`

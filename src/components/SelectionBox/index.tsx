@@ -1,7 +1,9 @@
 import React from 'react'
+import { colors } from '../theme'
 
 // Components
 import  {
+    StyledLabelContainer,
     StyledSelectionBox,
     StyledItemContainer,
     StyledItemContainerInactive,
@@ -9,6 +11,7 @@ import  {
     StyledItemPhoto,
     StyledItemPhotoInactive
 } from './components'
+import { P1 } from '../Typography'
 
 // Consts
 import { ITEMS } from '../../constants'
@@ -21,13 +24,13 @@ const SelectionBox: React.FC<any> = ({
         <StyledSelectionBox>
             {ITEMS.map(item => {
                 return (
-                    <>
+                    <div key={item}>
                         {canvasItems.largePortion.item !== item
                         && canvasItems.smallPortion1.item !== item 
                         && canvasItems.smallPortion2.item !== item
                         && canvasItems.cup.item !== item
                         && canvasItems.bowl.item !== item
-                            ? <StyledItemContainer key={item}>
+                            ? <StyledItemContainer>
                                 <StyledPhotoContainer>
                                     <StyledItemPhoto
                                         id={`${item}`}
@@ -36,8 +39,11 @@ const SelectionBox: React.FC<any> = ({
                                         style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}}
                                     />
                                 </StyledPhotoContainer>
+                                <StyledLabelContainer id="item-text">
+                                    <P1 color={colors.blue}>{item}</P1>
+                                </StyledLabelContainer>
                             </StyledItemContainer>
-                            : <StyledItemContainerInactive key={item}>
+                            : <StyledItemContainerInactive>
                                 <StyledPhotoContainer>
                                     <StyledItemPhotoInactive
                                         id={`${item}`}
@@ -46,9 +52,12 @@ const SelectionBox: React.FC<any> = ({
                                         style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}}
                                     />
                                 </StyledPhotoContainer>
+                                <StyledLabelContainer id="item-text">
+                                    <P1 color={colors.blue}>{item}</P1>
+                                </StyledLabelContainer>
                             </StyledItemContainerInactive>
                         }
-                    </>
+                    </div>
                 )
             })}
         </StyledSelectionBox>

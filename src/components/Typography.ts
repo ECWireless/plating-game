@@ -32,4 +32,8 @@ export const H2 = styled.h2<ITypography>`
 export const P1 = styled.p`
     font-size: 1.8rem;
     line-height: 22px;
+
+    ${props => props.color && css`
+        color: ${props.color};
+    `}
 `
