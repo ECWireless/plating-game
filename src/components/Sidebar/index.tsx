@@ -13,35 +13,12 @@ import { SelectionButton } from '../Buttons/SelectionButton'
 import { H1, H2, P1 } from '../Typography'
 
 const Sidebar: React.FC<any> = ({
+    mealSelection,
+    onResetGame,
     recentItem,
     setCanvasItems,
+    setMealSelection,
 }) => {
-
-    const onResetGame = () => {
-        setCanvasItems((prev: any) => ({
-            ...prev,
-            largePortion: {
-                active: false,
-                item: '',
-            },
-            smallPortion1: {
-                active: false,
-                item: '',
-            },
-            smallPortion2: {
-                active: false,
-                item: '',
-            },
-            cup: {
-                active: false,
-                item: '',
-            },
-            bowl: {
-                active: false,
-                item: '',
-            },
-        }))
-    }
 
     const onRemoveRecentItem = () => {
         if (recentItem === 'largePortion') {
@@ -93,7 +70,7 @@ const Sidebar: React.FC<any> = ({
                 <H2>Pick meal type:</H2>
             </StyledTextContainer>
             <StyledSelectionButtonContainer>
-                <SelectionButton />
+                <SelectionButton setMealSelection={setMealSelection} mealSelection={mealSelection} />
             </StyledSelectionButtonContainer>
             <StyledTextContainer>
                 <H1 bold={'true'}>Correct!</H1>

@@ -13,47 +13,47 @@ import  {
 } from './components'
 import { P1 } from '../Typography'
 
-// Consts
-import { ITEMS } from '../../constants'
-
 const SelectionBox: React.FC<any> = ({
     canvasItems,
+    data,
     drag,
 }) => {
     return (
         <StyledSelectionBox>
-            {ITEMS.map(item => {
+            {data.map((item: any) => {
+                const name = item.name
+                const filename = item.filename
                 return (
-                    <div key={item}>
-                        {canvasItems.largePortion.item !== item
-                        && canvasItems.smallPortion1.item !== item 
-                        && canvasItems.smallPortion2.item !== item
-                        && canvasItems.cup.item !== item
-                        && canvasItems.bowl.item !== item
+                    <div key={filename}>
+                        {canvasItems.largePortion.item !== filename
+                        && canvasItems.smallPortion1.item !== filename 
+                        && canvasItems.smallPortion2.item !== filename
+                        && canvasItems.cup.item !== filename
+                        && canvasItems.bowl.item !== filename
                             ? <StyledItemContainer>
                                 <StyledPhotoContainer>
                                     <StyledItemPhoto
-                                        id={`${item}`}
+                                        id={`${filename}`}
                                         draggable={"true"}
                                         onDragStart={(e:any) => drag(e)}
-                                        style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}}
+                                        style={{ backgroundImage: `url('/static/foods/${filename}.png')`}}
                                     />
                                 </StyledPhotoContainer>
                                 <StyledLabelContainer id="item-text">
-                                    <P1 color={colors.blue}>{item}</P1>
+                                    <P1 color={colors.blue}>{name}</P1>
                                 </StyledLabelContainer>
                             </StyledItemContainer>
                             : <StyledItemContainerInactive>
                                 <StyledPhotoContainer>
                                     <StyledItemPhotoInactive
-                                        id={`${item}`}
+                                        id={`${filename}`}
                                         draggable={"true"}
                                         onDragStart={(e:any) => drag(e)}
-                                        style={{ backgroundImage: `url('/static/dummy-foods/${item}.png')`}}
+                                        style={{ backgroundImage: `url('/static/foods/${filename}.png')`}}
                                     />
                                 </StyledPhotoContainer>
                                 <StyledLabelContainer id="item-text">
-                                    <P1 color={colors.blue}>{item}</P1>
+                                    <P1 color={colors.blue}>{name}</P1>
                                 </StyledLabelContainer>
                             </StyledItemContainerInactive>
                         }

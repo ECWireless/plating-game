@@ -1,10 +1,14 @@
+import React from 'react'
 import styled from 'styled-components'
 import { colors, shadows } from '../theme'
 
-export const SelectionButton = () => {
+export const SelectionButton: React.FC<any> = ({
+    mealSelection,
+    setMealSelection,
+}) => {
     return (
         <SelectionButtonContainer>
-            <StyledButton>
+            <StyledButton value={mealSelection} onChange={(e) => setMealSelection(e.target.value)}>
                 <option value="breakfast">Breakfast</option>
                 <option value="linner">Lunch / Dinner</option>
             </StyledButton>

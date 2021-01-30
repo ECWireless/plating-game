@@ -6,6 +6,7 @@ export const StyledLabelContainer = styled.p`
     bottom: -4.5rem;
     opacity: 0;
     transition: all .3s ease;
+    text-align: center;
 `
 
 export const StyledSelectionBox = styled.div`
@@ -41,6 +42,7 @@ export const StyledItemContainer = styled.div`;
         #item-text {
             opacity: 1;
             transform: translateY(2.5rem);
+            width: 30rem;
         }
     }
 

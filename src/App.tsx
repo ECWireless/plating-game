@@ -10,7 +10,15 @@ import SelectionBox from './components/SelectionBox'
 // Interfaces
 import { ICanvas } from './components/faces'
 
+// Constants
+import { BREAKFAST_ITEMS, LINNER_ITEMS } from './constants'
+
 function App() {
+
+	// State
+	const [data, setData] = React.useState(BREAKFAST_ITEMS)
+	const [mealSelection, setMealSelection] = React.useState('breakfast')
+	const [recentItem, setRecentItem] = React.useState('')
 	const [canvasItems, setCanvasItems] = React.useState<ICanvas>({
 		largePortion: {
 			active: false,
@@ -34,8 +42,17 @@ function App() {
 		},
 	})
 
-	const [recentItem, setRecentItem] = React.useState('')
+	// Effect
+	React.useEffect(() => {
+		onResetGame()
+		if (mealSelection === 'breakfast') {
+			setData(BREAKFAST_ITEMS)
+		} else if (mealSelection === 'linner') {
+			setData(LINNER_ITEMS)
+		}
+	}, [mealSelection])
 
+	// Functions
 	const allowDrop = (e: any) => {
 		e.preventDefault();
 	}
@@ -141,6 +158,32 @@ function App() {
                 }
             }))
         }
+	}
+	
+	const onResetGame = () => {
+        setCanvasItems((prev: any) => ({
+            ...prev,
+            largePortion: {
+                active: false,
+                item: '',
+            },
+            smallPortion1: {
+                active: false,
+                item: '',
+            },
+            smallPortion2: {
+                active: false,
+                item: '',
+            },
+            cup: {
+                active: false,
+                item: '',
+            },
+            bowl: {
+                active: false,
+                item: '',
+            },
+        }))
     }
 
 	return (
@@ -153,8 +196,14 @@ function App() {
 				onRemoveItem={onRemoveItem}
 				setCanvasItems={setCanvasItems}
 			/>
-			<Sidebar recentItem={recentItem} setCanvasItems={setCanvasItems} />
-			<SelectionBox canvasItems={canvasItems} drag={(e: any) => drag(e)} />
+			<Sidebar
+				mealSelection={mealSelection}
+				onResetGame={onResetGame}
+				recentItem={recentItem}
+				setCanvasItems={setCanvasItems}
+				setMealSelection={setMealSelection}
+			/>
+			<SelectionBox canvasItems={canvasItems} data={data} drag={(e: any) => drag(e)} />
 		</StyledGameContainer>
 	);
 }
