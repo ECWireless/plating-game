@@ -21,6 +21,7 @@ import IndicatorIcon from '../IndicatorIcon'
 
 const PlatingCanvas: React.FC<any> = ({
     allowDrop,
+    answer,
     canvasItems,
     drop,
     onRemoveItem,
@@ -82,7 +83,7 @@ const PlatingCanvas: React.FC<any> = ({
                 />}
             </StyledPlacement5>
             <StyledIndicatorPosition>
-                <IndicatorIcon />
+                <IndicatorIcon answer={answer} />
             </StyledIndicatorPosition>
         </StyledPlatingCanvasContainer>
     )

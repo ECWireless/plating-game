@@ -62,5 +62,39 @@ export const BREAKFAST_ITEMS = [
         correctPortion: 'Quarter',
         messageWrong: `Foods like waffles and pancakes are breakfast staples. Due to their starch content, you really only want it to fill a quarter of your plate. Try again.`,
         messageRight: 'Good! We know it feels strange not to fill your plate with a whole waffle or pancake, but you want to be especially careful. Be mindful of sugar syrups as well.'
-    }
+    },
+
+    // Fruits and Drinks
+    {
+        filename: 'fruit-juice',
+        name: 'Fruit Juice',
+        foodType: 'Sugary Drink',
+        correctPortion: '',
+        messageWrong: 'Fruit juices like orange juice are a great source of Vitamin C, but you should be careful due to its sugar content. Try again without having a cookie or fruit on the side.',
+        messageRight: `Good! Fruit juices like orange juice are a great source of Vitamin C, but just make sure you don't have it with a piece of fruit or a sweet like cookies.`
+    },
+    {
+        filename: 'milk',
+        name: 'Milk',
+        foodType: 'Mild Sugary Drink',
+        correctPortion: '',
+        messageWrong: `You may be surprised to know that milk has its own sugars. While it is natural, you shouldn't combine it with cookies as tempting as it may be. Try again.`,
+        messageRight: `Great! Dietary guidelines suggest having a glass of milk and piece of fruit with your meal is the best combination.`
+    },
+    {
+        filename: 'water',
+        name: 'Water',
+        foodType: 'Water',
+        correctPortion: '',
+        messageWrong: `While it's not wrong to have water with your meal, we suggest having milk and a piece of fruit if you can. Stick to water if you're having a sweet dessert like a cookie.`,
+        messageRight: `Yes! You can have water with your meal if you plan on having something sweet like a cookie. We recommend milk and a piece of fruit otherwise.`
+    },
+    {
+        filename: 'apple',
+        name: 'Apple',
+        foodType: 'Fruit',
+        correctPortion: '',
+        messageWrong: `While fruit may seem like a perfect choice, you definitely don't want to combine it with something like fruit juice.`,
+        messageRight: `Great! Having a piece of fruit alongside your meal is a good choice, especially with a glass of milk.`
+    },
 ]

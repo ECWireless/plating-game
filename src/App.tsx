@@ -172,6 +172,44 @@ function App() {
 				}
 			}))
 			setRecentItem('cup')
+
+			// Rules
+			if (selectedItemData.foodType === 'Sugary Drink' && canvasItems.bowl.item === '') {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else if (selectedItemData.foodType === 'Mild Sugary Drink' && (canvasItems.bowl.item === 'apple' || canvasItems.bowl.item === '')) {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else if (selectedItemData.foodType === 'Sugar-Free Drink' && (canvasItems.bowl.item === 'cookie' || canvasItems.bowl.item === 'apple'|| canvasItems.bowl.item === '')) {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else if (selectedItemData.foodType === 'Water' && (canvasItems.bowl.item === 'cookie' || canvasItems.bowl.item === '')) {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: false,
+					message: selectedItemData.messageWrong,
+				}))
+			}
 		} else if (e.target.id === 'placement-bowl') {
 			setCanvasItems(prev => ({
 				...prev,
@@ -181,6 +219,23 @@ function App() {
 				}
 			}))
 			setRecentItem('bowl')
+
+			// Rules
+			if (selectedItemData.foodType === 'Fruit' && (canvasItems.cup.item === 'milk' || canvasItems.cup.item === 'sugar-free-soda' || canvasItems.cup.item === '')) {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: false,
+					message: selectedItemData.messageWrong,
+				}))
+			}
 		}
 
 	}
@@ -273,6 +328,7 @@ function App() {
 		<StyledGameContainer>
 			<PlatingCanvas
 				allowDrop={(e: any) => allowDrop(e)}
+				answer={answer}
 				canvasItems={canvasItems}
 				drag={(e: any) => drag(e)}
 				drop={(e: any) => drop(e)}
