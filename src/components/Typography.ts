@@ -3,10 +3,10 @@ import { colors } from './theme'
 
 interface ITypography {
     bold?: string;
+    color?: string;
 }
 
 export const H1 = styled.h1<ITypography>`
-    color: ${colors.green};
     font-size: 2.8rem;
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -14,6 +14,10 @@ export const H1 = styled.h1<ITypography>`
     
     ${props => props.bold === 'true' && css`
         font-weight: bold;
+    `}
+
+    ${props => props.color && css`
+        color: ${props.color};
     `}
 `
 

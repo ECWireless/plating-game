@@ -8,7 +8,7 @@ import Sidebar from './components/Sidebar'
 import SelectionBox from './components/SelectionBox'
 
 // Interfaces
-import { ICanvas } from './components/faces'
+import { ICanvas, ISelectedItemData } from './components/faces'
 
 // Constants
 import { BREAKFAST_ITEMS, LINNER_ITEMS } from './constants'
@@ -16,6 +16,11 @@ import { BREAKFAST_ITEMS, LINNER_ITEMS } from './constants'
 function App() {
 
 	// State
+	const [answer, setAnswer] = React.useState({
+		answered: false,
+		correct: false,
+		message: '',
+	})
 	const [data, setData] = React.useState(BREAKFAST_ITEMS)
 	const [mealSelection, setMealSelection] = React.useState('breakfast')
 	const [recentItem, setRecentItem] = React.useState('')
@@ -63,43 +68,107 @@ function App() {
 	
 	const drop = (e: any) => {
 		e.preventDefault();
-		let data = e.dataTransfer.getData("text");
+		let idData = e.dataTransfer.getData("text");
+		let selectedItemData: ISelectedItemData = {
+			filename: '',
+			name: '',
+			foodType: '',
+			correctPortion: '',
+			messageWrong: '',
+			messageRight: '',
+		}
+		data.forEach((food: any) => {
+			if (food.filename === idData) {
+				selectedItemData = food
+			}
+		})
 
-		if (data === '') {
+		if (idData === '') {
 			return
 		} else if (e.target.id === 'placement-large') {
 			setCanvasItems(prev => ({
 				...prev,
 				largePortion: {
 					active: true,
-					item: data
+					item: idData
 				}
 			}))
 			setRecentItem('largePortion')
+
+			// Rules
+			if (selectedItemData.correctPortion === 'Half') {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: false,
+					message: selectedItemData.messageWrong,
+				}))
+			}
 		} else if (e.target.id === 'placement-small-1') {
 			setCanvasItems(prev => ({
 				...prev,
 				smallPortion1: {
 					active: true,
-					item: data
+					item: idData
 				}
 			}))
+
+			// Rules
 			setRecentItem('smallPortion1')
+			if (selectedItemData.correctPortion === 'Quarter') {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: false,
+					message: selectedItemData.messageWrong,
+				}))
+			}
 		} else if (e.target.id === 'placement-small-2') {
 			setCanvasItems(prev => ({
 				...prev,
 				smallPortion2: {
 					active: true,
-					item: data
+					item: idData
 				}
 			}))
 			setRecentItem('smallPortion2')
+
+			// Rules
+			if (selectedItemData.correctPortion === 'Quarter') {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: false,
+					message: selectedItemData.messageWrong,
+				}))
+			}
 		} else if (e.target.id === 'placement-cup') {
 			setCanvasItems(prev => ({
 				...prev,
 				cup: {
 					active: true,
-					item: data
+					item: idData
 				}
 			}))
 			setRecentItem('cup')
@@ -108,7 +177,7 @@ function App() {
 				...prev,
 				bowl: {
 					active: true,
-					item: data
+					item: idData
 				}
 			}))
 			setRecentItem('bowl')
@@ -117,6 +186,13 @@ function App() {
 	}
 
 	const onRemoveItem = (removedItem: string) => {
+		setAnswer(prev => ({
+			...prev,
+			answered: false,
+			correct: false,
+			message: '',
+		}))
+
         if (removedItem === 'largePortion') {
             setCanvasItems((prev: any) => ({
                 ...prev,
@@ -161,6 +237,13 @@ function App() {
 	}
 	
 	const onResetGame = () => {
+		setAnswer(prev => ({
+			...prev,
+			answered: false,
+			correct: false,
+			message: '',
+		}))
+		
         setCanvasItems((prev: any) => ({
             ...prev,
             largePortion: {
@@ -197,9 +280,11 @@ function App() {
 				setCanvasItems={setCanvasItems}
 			/>
 			<Sidebar
+				answer={answer}
 				mealSelection={mealSelection}
 				onResetGame={onResetGame}
 				recentItem={recentItem}
+				setAnswer={setAnswer}
 				setCanvasItems={setCanvasItems}
 				setMealSelection={setMealSelection}
 			/>

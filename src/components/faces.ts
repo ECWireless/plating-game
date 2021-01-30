@@ -20,3 +20,12 @@ export interface ICanvas {
 		item: string;
 	};
 }
+
+export interface ISelectedItemData {
+	filename: string;
+	name: string;
+	foodType: string;
+	correctPortion: string;
+	messageWrong: string;
+	messageRight: string;
+}

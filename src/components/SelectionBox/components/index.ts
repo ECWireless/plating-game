@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { colors, shadows } from '../../../components/theme'
 
-export const StyledLabelContainer = styled.p`
+export const StyledLabelContainer = styled.div`
     position: absolute;
-    bottom: -4.5rem;
+    bottom: -3rem;
     opacity: 0;
     transition: all .3s ease;
     text-align: center;
@@ -41,7 +41,7 @@ export const StyledItemContainer = styled.div`;
 
         #item-text {
             opacity: 1;
-            transform: translateY(2.5rem);
+            transform: translateY(2rem);
             width: 30rem;
         }
     }
