@@ -10,10 +10,6 @@ export const StyledBowl = styled.div`
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     transform: scale(.6);
-
-    ${media.xl`
-        margin-left: 25rem;
-    `}
 `
 
 export const StyledCup = styled.div`
@@ -24,10 +20,6 @@ export const StyledCup = styled.div`
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     margin-top: 5rem;
-
-    ${media.xl`
-        margin-left: 25rem;
-    `}
 `
 
 export const StyledIndicatorPosition = styled.div`
@@ -50,7 +42,7 @@ export const StyledPhoto = styled.div`
 
 export const StyledPlatePlacementContainer = styled.div`
     display: grid;
-    grid-column: 2 / 4;
+    grid-column: 2 / 3;
     grid-row: 1 / -1;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -62,13 +54,21 @@ export const StyledPlacement1 = styled.div`
     display: flex;
     grid-column: 1 / 2;
     grid-row: 1 / -1;
-    height: 26rem;
+    height: 25rem;
     justify-self: flex-end;
-    width: 26rem;
+    margin-right: -3rem;
+    width: 25rem;
+
+    ${media.lg`
+        margin-right: -4rem;
+        height: 32rem;
+        width: 32rem;
+    `}
 
     ${media.xl`
-        height: 34rem;
-        width: 34rem;
+        margin-right: -4rem;
+        height: 40rem;
+        width: 40rem;
     `}
 `
 
@@ -77,15 +77,22 @@ export const StyledPlacement2 = styled.div`
     display: flex;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    height: 18rem;
+    height: 13rem;
     justify-self: flex-start;
     margin: 2rem;
-    width: 18rem;
+    width: 13rem;
+
+    ${media.lg`
+        margin: 2rem;
+        height: 18rem;
+        width: 18rem;
+    `}
 
     ${media.xl`
-        margin: 1rem;
-        height: 28rem;
-        width: 28rem;
+        margin-left: -2rem;
+        margin-bottom: -1rem;
+        height: 23rem;
+        width: 23rem;
     `}
 `
 
@@ -94,15 +101,22 @@ export const StyledPlacement3 = styled.div`
     display: flex;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    height: 18rem;
+    height: 13rem;
     justify-self: flex-start;
     margin: 2rem;
-    width: 18rem;
+    width: 13rem;
+
+    ${media.lg`
+        height: 18rem;
+        margin: 2rem;
+        width: 18rem;
+    `}
 
     ${media.xl`
-        margin: 1rem;
-        height: 28rem;
-        width: 28rem;
+        margin-left: -2rem;
+        margin-top: -1rem;
+        height: 23rem;
+        width: 23rem;
     `}
 `
 
@@ -111,14 +125,19 @@ export const StyledPlacement4 = styled.div`
     display: flex;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    height: 25rem;
+    height: 14rem;
     justify-self: center;
     margin-top: 5rem;
-    width: 25rem;
+    width: 14rem;
     z-index: 2;
 
+    ${media.lg`
+        height: 25rem;
+        margin-top: 5rem;
+        width: 25rem;
+    `}
+
     ${media.xl`
-        margin-left: 25rem;
         height: 35rem;
         width: 35rem;
     `}
@@ -129,16 +148,21 @@ export const StyledPlacement5 = styled.div`
     display: flex;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    height: 20rem;
+    height: 13rem;
     justify-self: center;
     margin-top: 5rem;
-    width: 20rem;
+    width: 13rem;
     z-index: 2;
 
+    ${media.lg`
+        height: 20rem;
+        margin-top: 5rem;
+        width: 20rem;
+    `}
+
     ${media.xl`
-        margin-left: 25rem;
-        height: 28rem;
-        width: 28rem;
+        height: 20rem;
+        width: 20rem;
     `}
 `
 
@@ -162,12 +186,13 @@ export const StyledPlatingCanvas = styled.div`
 `
 
 export const StyledPlatingCanvasContainer = styled.div`
-    border: 2px solid ${colors.blue};
+    border-bottom: 2px solid ${colors.blue};
     display: grid;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 	grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 1fr;
+    overflow: hidden;
     position: relative;
 `
 

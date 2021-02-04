@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from './components/Breakpoints'
+import { colors } from './components/theme'
 
 // Components
 import PlatingCanvas from './components/PlatingCanvas'
@@ -325,39 +326,79 @@ function App() {
     }
 
 	return (
-		<StyledGameContainer>
-			<PlatingCanvas
-				allowDrop={(e: any) => allowDrop(e)}
-				answer={answer}
-				canvasItems={canvasItems}
-				drag={(e: any) => drag(e)}
-				drop={(e: any) => drop(e)}
-				onRemoveItem={onRemoveItem}
-				setCanvasItems={setCanvasItems}
-			/>
-			<Sidebar
-				answer={answer}
-				mealSelection={mealSelection}
-				onResetGame={onResetGame}
-				recentItem={recentItem}
-				setAnswer={setAnswer}
-				setCanvasItems={setCanvasItems}
-				setMealSelection={setMealSelection}
-			/>
-			<SelectionBox canvasItems={canvasItems} data={data} drag={(e: any) => drag(e)} />
-		</StyledGameContainer>
+		<Wrapper>
+			<StyledGameContainer>
+				<PlatingCanvas
+					allowDrop={(e: any) => allowDrop(e)}
+					answer={answer}
+					canvasItems={canvasItems}
+					drag={(e: any) => drag(e)}
+					drop={(e: any) => drop(e)}
+					onRemoveItem={onRemoveItem}
+					setCanvasItems={setCanvasItems}
+				/>
+				<Sidebar
+					answer={answer}
+					mealSelection={mealSelection}
+					onResetGame={onResetGame}
+					recentItem={recentItem}
+					setAnswer={setAnswer}
+					setCanvasItems={setCanvasItems}
+					setMealSelection={setMealSelection}
+				/>
+				<SelectionBox canvasItems={canvasItems} data={data} drag={(e: any) => drag(e)} />
+			</StyledGameContainer>
+		</Wrapper>
 	);
 }
 
 export default App;
 
+// const StyledGameContainer = styled.div`
+// 	display: grid;
+// 	grid-template-columns: 1fr 40rem;
+// 	grid-template-rows: 60rem 40rem;
+
+// 	${media.xl`
+// 		grid-template-columns: 1fr 50rem;
+// 		grid-template-rows: 80rem 50rem;
+// 	`}
+// `
+
 const StyledGameContainer = styled.div`
+	border: 2px solid ${colors.blue};
+	border-radius: 15px;
+	box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	display: grid;
-	grid-template-columns: 1fr 40rem;
-	grid-template-rows: 60rem 40rem;
+	grid-template-columns: 52rem 22rem;
+	grid-template-rows: 38rem;
+    overflow: hidden;
+	position: absolute;
+
+	${media.md`
+		grid-template-columns: 66rem 30rem;
+		grid-template-rows: 43rem 20rem;
+	`}
+
+	${media.lg`
+		grid-template-columns: 82.5rem 35rem;
+		grid-template-rows: 55rem 20rem;
+	`}
 
 	${media.xl`
-		grid-template-columns: 1fr 50rem;
-		grid-template-rows: 80rem 50rem;
+		grid-template-columns: 100rem 40rem;
+		grid-template-rows: 72.8rem 20rem;
 	`}
 `
+
+const Wrapper = styled.div`
+	background: linear-gradient(45deg, #7db1e3 12.45%, #fff 96.55%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+`;

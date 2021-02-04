@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { media } from '../Breakpoints'
 import { colors, shadows } from '../theme'
 
 export const ResetPlayButton = styled.button`
@@ -8,12 +9,12 @@ export const ResetPlayButton = styled.button`
     box-shadow: ${shadows.button};
     color: ${colors.white};
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 1.4rem;
     outline: none;
     text-transform: uppercase;
     transition: all .3s ease;
-    height: 8rem;
-    width: 30rem;
+    height: 6rem;
+    width: 20rem;
 
     &:hover {
         border: 2px solid ${colors.white};
@@ -24,4 +25,16 @@ export const ResetPlayButton = styled.button`
     &:active {
         box-shadow: none;
     }
+
+    ${media.lg`
+        font-size: 1.8rem;
+        height: 8rem;
+        width: 26rem;
+    `}
+
+    ${media.xl`
+        font-size: 2rem;
+        height: 8rem;
+        width: 30rem;
+    `}
 `

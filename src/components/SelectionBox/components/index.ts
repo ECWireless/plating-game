@@ -1,5 +1,15 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { media } from '../../../components/Breakpoints'
 import { colors, shadows } from '../../../components/theme'
+
+export const FoodLabel = styled.p`
+    font-size: 1.8rem;
+    line-height: 14px;
+
+    ${props => props.color && css`
+        color: ${props.color};
+    `}
+`
 
 export const StyledLabelContainer = styled.div`
     position: absolute;
@@ -11,14 +21,15 @@ export const StyledLabelContainer = styled.div`
 
 export const StyledSelectionBox = styled.div`
     align-items: center;
-    justify-content: center;
-    border: 2px solid ${colors.blue};
+    background: ${colors.white};
+    border-radius: 0 0 15px 15px;
+    justify-content: flex-start;
     display: flex;
-    flex-wrap: wrap;
 	grid-column: 1 / 3;
     grid-row: 2 / 3;
-    overflow: scroll;
-    padding: 4rem 4rem 6rem;
+
+    overflow: auto;
+    white-space: nowrap;
 `
 
 export const StyledItemContainer = styled.div`;
@@ -31,7 +42,7 @@ export const StyledItemContainer = styled.div`;
     height: 12rem;
     position: relative;
     width: 12rem;
-    margin: 0 3rem 5rem;
+    margin: -2rem 1.5rem 0;
     transition: all .3s ease;
 
     &:hover {
@@ -50,6 +61,10 @@ export const StyledItemContainer = styled.div`;
         box-shadow: none;
         cursor: grabbing;
     }
+
+    ${media.lg`
+        margin: -2rem 3rem 0;
+    `}
 `
 
 export const StyledItemContainerInactive = styled.div`
@@ -61,7 +76,7 @@ export const StyledItemContainerInactive = styled.div`
     justify-content: center;
     height: 12rem;
     width: 12rem;
-    margin: 0 3rem 5rem;
+    margin: -2rem 3rem 0;
 `
 
 export const StyledPhotoContainer = styled.div`

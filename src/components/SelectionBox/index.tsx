@@ -3,6 +3,7 @@ import { colors } from '../theme'
 
 // Components
 import  {
+    FoodLabel,
     StyledLabelContainer,
     StyledSelectionBox,
     StyledItemContainer,
@@ -11,7 +12,6 @@ import  {
     StyledItemPhoto,
     StyledItemPhotoInactive
 } from './components'
-import { P1 } from '../Typography'
 
 const SelectionBox: React.FC<any> = ({
     canvasItems,
@@ -40,7 +40,7 @@ const SelectionBox: React.FC<any> = ({
                                     />
                                 </StyledPhotoContainer>
                                 <StyledLabelContainer id="item-text">
-                                    <P1 color={colors.blue}>{name}</P1>
+                                    <FoodLabel color={colors.blue}>{name}</FoodLabel>
                                 </StyledLabelContainer>
                             </StyledItemContainer>
                             : <StyledItemContainerInactive>
@@ -53,7 +53,7 @@ const SelectionBox: React.FC<any> = ({
                                     />
                                 </StyledPhotoContainer>
                                 <StyledLabelContainer id="item-text">
-                                    <P1 color={colors.blue}>{name}</P1>
+                                    <FoodLabel color={colors.blue}>{name}</FoodLabel>
                                 </StyledLabelContainer>
                             </StyledItemContainerInactive>
                         }

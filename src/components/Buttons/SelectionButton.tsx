@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from '../Breakpoints'
 import { colors, shadows } from '../theme'
 
 export const SelectionButton: React.FC<any> = ({
@@ -22,8 +23,18 @@ export const SelectionButton: React.FC<any> = ({
 
 const SelectionButtonContainer = styled.div`
     position: relative;
-    height: 8rem;
-    width: 30rem;
+    height: 6rem;
+    width: 20rem;
+
+    ${media.lg`
+        height: 8rem;
+        width: 26rem;
+    `}
+
+    ${media.xl`
+        height: 8rem;
+        width: 30rem;
+    `}
 
     &:hover {
         #selection-svg {
@@ -42,13 +53,26 @@ const StyledButton = styled.select`
     box-shadow: ${shadows.button};
     color: ${colors.white};
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 1.4rem;
     outline: none;
-    padding: 2rem;
+    padding: 1rem 2rem;
     text-transform: uppercase;
     transition: all .3s ease;
-    height: 8rem;
-    width: 30rem;
+    height: 6rem;
+    width: 20rem;
+
+    ${media.lg`
+        font-size: 1.8rem;
+        height: 8rem;
+        width: 26rem;
+        padding: 2rem;
+    `}
+
+    ${media.xl`
+        font-size: 2rem;
+        height: 8rem;
+        width: 30rem;
+    `}
 
     &:hover {
         border: 2px solid ${colors.white};
@@ -63,19 +87,32 @@ const StyledButton = styled.select`
 
 const StyledLine = styled.div`
     background: ${colors.white};
-    height: 4rem;
+    height: 2.5rem;
     position: absolute;
-    right: 8rem;
+    right: 6rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 3px;
+    width: 2px;
+
+    ${media.lg`
+        right: 8rem;
+        height: 4rem;
+        width: 3px;
+    `}
 `
 
 const StyledSvg = styled.svg`
-    height: 1.8rem; 
+    height: 1.2rem; 
     position: absolute;
     right: 3rem;
-    top: 3.2rem;
+    top: 2.5rem;
     transition: all .3s ease;
-    width: 2.9rem;
+    width: 1.8rem;
+
+    ${media.lg`
+        height: 1.8rem; 
+        top: 3.2rem;
+        width: 2.9rem;
+        width: 2.3rem;
+    `}
 `
