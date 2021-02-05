@@ -22,6 +22,10 @@ export const H1 = styled.h1<ITypography>`
     `}
 
     ${media.lg`
+        font-size: 2.6rem;
+    `}
+
+    ${media.xl`
         font-size: 2.8rem;
     `}
 `
@@ -38,6 +42,10 @@ export const H2 = styled.h2<ITypography>`
     `}
 
     ${media.lg`
+        font-size: 2.2rem;
+    `}
+
+    ${media.xl`
         font-size: 2.4rem;
     `}
 `
@@ -51,6 +59,11 @@ export const P1 = styled.p`
     `}
 
     ${media.lg`
+        font-size: 1.6rem;
+        line-height: 20px;
+    `}
+
+    ${media.xl`
         font-size: 1.8rem;
         line-height: 22px;
     `}

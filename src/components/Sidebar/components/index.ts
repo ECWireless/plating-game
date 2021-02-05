@@ -11,7 +11,7 @@ export const StyledRemoveButtonContainer = styled.div`
 export const StyledSelectionButtonContainer = styled.div`
     margin-top: 1.5rem;
 
-    ${media.lg`
+    ${media.xl`
         margin-top: 2rem;
     `}
 `
@@ -32,6 +32,10 @@ export const StyledTextContainer = styled.div`
     margin-top: 3rem;
 
     ${media.lg`
+        margin-top: 3rem;
+    `}
+
+    ${media.xl`
         margin-top: 5rem;
     `}
 `

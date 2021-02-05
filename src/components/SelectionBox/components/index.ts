@@ -42,9 +42,9 @@ export const StyledItemContainer = styled.div`;
     box-shadow: ${shadows.button};
     display: flex;
     justify-content: center;
-    height: 12rem;
+    height: 9rem;
     position: relative;
-    width: 12rem;
+    width: 9rem;
     margin: -2rem 1.5rem 0;
     transition: all .3s ease;
 
@@ -68,6 +68,11 @@ export const StyledItemContainer = styled.div`;
     ${media.lg`
         margin: -2rem 3rem 0;
     `}
+
+    ${media.xl`
+        height: 12rem;
+        width: 12rem;
+    `}
 `
 
 export const StyledItemContainerInactive = styled.div`
@@ -77,20 +82,34 @@ export const StyledItemContainerInactive = styled.div`
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    height: 12rem;
-    width: 12rem;
-    margin: -2rem 3rem 0;
+    height: 9rem;
+    width: 9rem;
+    margin: -2rem 1.5rem 0;
+
+    ${media.lg`
+        margin: -2rem 3rem 0;
+    `}
+
+    ${media.xl`
+        height: 12rem;
+        width: 12rem;
+    `}
 `
 
 export const StyledPhotoContainer = styled.div`
-    height: 7rem;
-    width: 7rem;
+    height: 5.5rem;
+    width: 5.5rem;
 
     &:hover {
         #item-text {
             color: red;
         }
     }
+
+    ${media.xl`
+        height: 7rem;
+        width: 7rem;
+    `}
 `
 
 export const StyledItemPhoto = styled.div`
