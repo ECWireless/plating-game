@@ -18,8 +18,19 @@ const SelectionBox: React.FC<any> = ({
     data,
     drag,
 }) => {
+
+    const onWheel = (e: { preventDefault: () => void; deltaY: any }) => {
+        e.preventDefault()
+        var container = document.getElementById('scrolly')
+        var containerScrollPosition = document?.getElementById('scrolly')?.scrollLeft
+        container?.scrollTo({
+            top: 0,
+            left: containerScrollPosition + e.deltaY,
+            behavior: 'smooth' //if you want smooth scrolling
+        })
+    }
     return (
-        <StyledSelectionBox>
+        <StyledSelectionBox id='scrolly' onWheel={onWheel}>
             {data.map((item: any) => {
                 const name = item.name
                 const filename = item.filename
