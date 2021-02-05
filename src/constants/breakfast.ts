@@ -129,4 +129,36 @@ export const BREAKFAST_ITEMS = [
         messageWrong: `While fruit may seem like a perfect choice, you definitely don't want to combine it with something like fruit juice.`,
         messageRight: `Great! Having a piece of fruit alongside your meal is a good choice, especially with a glass of milk.`
     },
+    {
+        filename: 'coffee',
+        name: 'Coffee',
+        foodType: 'Sugar-Free Drink',
+        correctPortion: '',
+        messageWrong: ``,
+        messageRight: `Coffee is fine with breakfast. Just make sure you're careful about adding sugar. Drink black or with some cream.`
+    },
+    {
+        filename: 'banana',
+        name: 'Banana',
+        foodType: 'Fruit',
+        correctPortion: '',
+        messageWrong: ``,
+        messageRight: `Great! Having a piece of fruit alongside your meal is a good choice, especially with a glass of milk.`
+    },
+    {
+        filename: 'yogurt',
+        name: 'Yogurt',
+        foodType: 'Dairy',
+        correctPortion: '',
+        messageWrong: ``,
+        messageRight: `Yogurt is a fine choice, but just make sure it doesn't have extra sugar content. Choose a Greek yogurt or one sweetened with sucralose.`
+    },
+    {
+        filename: 'fruitcup',
+        name: 'Fruit Cup',
+        foodType: 'Fruit',
+        correctPortion: '',
+        messageWrong: ``,
+        messageRight: `Great! Having a fruit cup alongside your meal is a good choice, especially with a glass of milk.`
+    },
 ]

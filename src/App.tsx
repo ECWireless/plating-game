@@ -175,28 +175,28 @@ function App() {
 			setRecentItem('cup')
 
 			// Rules
-			if (selectedItemData.foodType === 'Sugary Drink' && canvasItems.bowl.item === '') {
+			if (selectedItemData.foodType === 'Sugary Drink' && (canvasItems.bowl.item === '' || canvasItems.bowl.item === 'banana' || canvasItems.bowl.item === 'yogurt' || canvasItems.bowl.item === 'fruitcup')) {
 				setAnswer(prev => ({
 					...prev,
 					answered: true,
 					correct: true,
 					message: selectedItemData.messageRight,
 				}))
-			} else if (selectedItemData.foodType === 'Mild Sugary Drink' && (canvasItems.bowl.item === 'apple' || canvasItems.bowl.item === '')) {
+			} else if (selectedItemData.foodType === 'Mild Sugary Drink' && (canvasItems.bowl.item === 'apple' || canvasItems.bowl.item === 'banana' || canvasItems.bowl.item === 'yogurt' || canvasItems.bowl.item === 'fruitcup' || canvasItems.bowl.item === '')) {
 				setAnswer(prev => ({
 					...prev,
 					answered: true,
 					correct: true,
 					message: selectedItemData.messageRight,
 				}))
-			} else if (selectedItemData.foodType === 'Sugar-Free Drink' && (canvasItems.bowl.item === 'cookie' || canvasItems.bowl.item === 'apple'|| canvasItems.bowl.item === '')) {
+			} else if (selectedItemData.foodType === 'Sugar-Free Drink' && (canvasItems.bowl.item === 'fruitcup' || canvasItems.bowl.item === 'cookie' || canvasItems.bowl.item === 'apple'|| canvasItems.bowl.item === 'yogurt'|| canvasItems.bowl.item === 'banana'|| canvasItems.bowl.item === 'icecream' || canvasItems.bowl.item === '')) {
 				setAnswer(prev => ({
 					...prev,
 					answered: true,
 					correct: true,
 					message: selectedItemData.messageRight,
 				}))
-			} else if (selectedItemData.foodType === 'Water' && (canvasItems.bowl.item === 'cookie' || canvasItems.bowl.item === '')) {
+			} else if (selectedItemData.foodType === 'Water' && (canvasItems.bowl.item === 'cookie' || canvasItems.bowl.item === 'banana' || canvasItems.bowl.item === 'yogurt' || canvasItems.bowl.item === 'fruitcup' || canvasItems.bowl.item === 'icecream' || canvasItems.bowl.item === '')) {
 				setAnswer(prev => ({
 					...prev,
 					answered: true,
@@ -222,7 +222,28 @@ function App() {
 			setRecentItem('bowl')
 
 			// Rules
-			if (selectedItemData.foodType === 'Fruit' && (canvasItems.cup.item === 'milk' || canvasItems.cup.item === 'sugar-free-soda' || canvasItems.cup.item === '')) {
+			if (selectedItemData.foodType === 'Fruit' && selectedItemData.name !== 'Apple') {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else if (selectedItemData.name === 'Apple' && (canvasItems.cup.item === 'milk' || canvasItems.cup.item === 'water' || canvasItems.cup.item === 'sugar-free-soda' || canvasItems.cup.item === '' || canvasItems.cup.item === 'coffee')) {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else if (selectedItemData.foodType === 'Dairy') {
+				setAnswer(prev => ({
+					...prev,
+					answered: true,
+					correct: true,
+					message: selectedItemData.messageRight,
+				}))
+			} else if (selectedItemData.name === 'Ice Cream' && (canvasItems.cup.item === 'water' || canvasItems.cup.item === 'coffee' || canvasItems.cup.item === 'sugar-free-soda' || canvasItems.cup.item === '')) {
 				setAnswer(prev => ({
 					...prev,
 					answered: true,

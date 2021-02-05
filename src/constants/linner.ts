@@ -201,4 +201,36 @@ export const LINNER_ITEMS = [
         messageWrong: `Be careful with desserts and sweets like cookies. If you want a cookie with your meal, replace your drink with water or sugar-free soda.`,
         messageRight: `Having a cookie with your meal is okay. Just make sure you have it with water or sugar-free soda to limit the amount of sugar you're consuming.`
     },
+    {
+        filename: 'coffee',
+        name: 'Coffee',
+        foodType: 'Sugar-Free Drink',
+        correctPortion: '',
+        messageWrong: ``,
+        messageRight: `Coffee is fine with breakfast. Just make sure you're careful about adding sugar. Drink black or with some cream.`
+    },
+    {
+        filename: 'banana',
+        name: 'Banana',
+        foodType: 'Fruit',
+        correctPortion: '',
+        messageWrong: ``,
+        messageRight: `Great! Having a piece of fruit alongside your meal is a good choice, especially with a glass of milk.`
+    },
+    {
+        filename: 'yogurt',
+        name: 'Yogurt',
+        foodType: 'Dairy',
+        correctPortion: '',
+        messageWrong: ``,
+        messageRight: `Yogurt is a fine choice, but just make sure it doesn't have extra sugar content. Choose a Greek yogurt or one sweetened with sucralose.`
+    },
+    {
+        filename: 'icecream',
+        name: 'Ice Cream',
+        foodType: 'Dessert',
+        correctPortion: '',
+        messageWrong: `Due to the sugar content of ice cream, you want to be mindful not to drink it with milk or juice. Try again.`,
+        messageRight: `Ice cream is an okay treat on occasion. Just make sure you stick to a scoop and don't add extra sugary toppings.`
+    },
 ]
