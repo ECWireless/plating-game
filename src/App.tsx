@@ -385,7 +385,7 @@ const StyledGameContainer = styled.div`
 
 	${media.lg`
 		grid-template-columns: 82.5rem 35rem;
-		grid-template-rows: 49rem 16rem;
+		grid-template-rows: 49rem 15rem;
 	`}
 
 	${media.xl`

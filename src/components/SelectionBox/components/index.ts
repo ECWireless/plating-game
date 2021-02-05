@@ -55,8 +55,12 @@ export const StyledItemContainer = styled.div`;
 
         #item-text {
             opacity: 1;
-            transform: translateY(2rem);
+            transform: translateY(1.5rem);
             width: 30rem;
+
+            ${media.xl`
+                transform: translateY(2rem);
+            `}
         }
     }
 
