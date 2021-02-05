@@ -68,13 +68,10 @@ export const StyledItemContainer = styled.div`;
         box-shadow: none;
         cursor: grabbing;
     }
-
-    ${media.lg`
-        margin: -2rem 3rem 0;
-    `}
-
+    
     ${media.xl`
         height: 12rem;
+        margin: -2rem 3rem 0;
         width: 12rem;
     `}
 `
@@ -90,11 +87,8 @@ export const StyledItemContainerInactive = styled.div`
     width: 9rem;
     margin: -2rem 1.5rem 0;
 
-    ${media.lg`
-        margin: -2rem 3rem 0;
-    `}
-
     ${media.xl`
+        margin: -2rem 3rem 0;
         height: 12rem;
         width: 12rem;
     `}
