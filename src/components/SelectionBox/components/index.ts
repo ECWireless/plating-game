@@ -31,6 +31,7 @@ export const StyledSelectionBox = styled.div`
     overflow: auto;
     white-space: nowrap;
     overflow-y: hidden;
+    overflow-x: scroll;
 `
 
 export const StyledItemContainer = styled.div`;
