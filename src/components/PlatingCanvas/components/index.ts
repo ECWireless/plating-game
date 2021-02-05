@@ -10,6 +10,10 @@ export const StyledBowl = styled.div`
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     transform: scale(.6);
+
+    ${media.xl`
+        transform: scale(.5);
+    `}
 `
 
 export const StyledCup = styled.div`
@@ -20,6 +24,10 @@ export const StyledCup = styled.div`
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     margin-top: 5rem;
+
+    ${media.xl`
+        transform: scale(.8);
+    `}
 `
 
 export const StyledIndicatorPosition = styled.div`
@@ -138,8 +146,8 @@ export const StyledPlacement4 = styled.div`
     `}
 
     ${media.xl`
-        height: 35rem;
-        width: 35rem;
+        height: 30rem;
+        width: 30rem;
     `}
 `
 

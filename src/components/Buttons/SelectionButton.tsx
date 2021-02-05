@@ -27,7 +27,7 @@ const SelectionButtonContainer = styled.div`
     width: 20rem;
 
     ${media.lg`
-        height: 8rem;
+        height: 6rem;
         width: 26rem;
     `}
 
@@ -63,9 +63,9 @@ const StyledButton = styled.select`
 
     ${media.lg`
         font-size: 1.8rem;
-        height: 8rem;
+        height: 6rem;
         width: 26rem;
-        padding: 2rem;
+        padding: 1rem 2rem;
     `}
 
     ${media.xl`
@@ -95,6 +95,12 @@ const StyledLine = styled.div`
     width: 2px;
 
     ${media.lg`
+        right: 7rem;
+        height: 3rem;
+        width: 3px;
+    `}
+
+    ${media.xl`
         right: 8rem;
         height: 4rem;
         width: 3px;
@@ -110,6 +116,13 @@ const StyledSvg = styled.svg`
     width: 1.8rem;
 
     ${media.lg`
+        height: 1.8rem; 
+        top: 2.3rem;
+        width: 2.9rem;
+        width: 2.3rem;
+    `}
+
+    ${media.xl`
         height: 1.8rem; 
         top: 3.2rem;
         width: 2.9rem;

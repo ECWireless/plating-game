@@ -20,6 +20,7 @@ export const StyledLabelContainer = styled.div`
 `
 
 export const StyledSelectionBox = styled.div`
+    touch-action:pan-y;
     align-items: center;
     background: ${colors.white};
     border-radius: 0 0 15px 15px;

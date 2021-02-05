@@ -28,7 +28,7 @@ export const ResetPlayButton = styled.button`
 
     ${media.lg`
         font-size: 1.8rem;
-        height: 8rem;
+        height: 6rem;
         width: 26rem;
     `}
 
