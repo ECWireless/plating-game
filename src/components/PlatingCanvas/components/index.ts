@@ -69,8 +69,8 @@ export const StyledPlacement1 = styled.div`
 
     ${media.lg`
         margin-right: -4rem;
-        height: 32rem;
-        width: 32rem;
+        height: 28rem;
+        width: 28rem;
     `}
 
     ${media.xl`
@@ -92,8 +92,8 @@ export const StyledPlacement2 = styled.div`
 
     ${media.lg`
         margin: 2rem;
-        height: 18rem;
-        width: 18rem;
+        height: 15rem;
+        width: 15rem;
     `}
 
     ${media.xl`
@@ -115,9 +115,9 @@ export const StyledPlacement3 = styled.div`
     width: 13rem;
 
     ${media.lg`
-        height: 18rem;
+        height: 15rem;
         margin: 2rem;
-        width: 18rem;
+        width: 15rem;
     `}
 
     ${media.xl`
@@ -140,9 +140,9 @@ export const StyledPlacement4 = styled.div`
     z-index: 2;
 
     ${media.lg`
-        height: 25rem;
+        height: 20rem;
         margin-top: 5rem;
-        width: 25rem;
+        width: 20rem;
     `}
 
     ${media.xl`
@@ -163,9 +163,9 @@ export const StyledPlacement5 = styled.div`
     z-index: 2;
 
     ${media.lg`
-        height: 20rem;
+        height: 15rem;
         margin-top: 5rem;
-        width: 20rem;
+        width: 15rem;
     `}
 
     ${media.xl`
