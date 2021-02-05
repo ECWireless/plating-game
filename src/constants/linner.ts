@@ -119,6 +119,38 @@ export const LINNER_ITEMS = [
         messageWrong: `While peas are a healthy food, you don't want to go too heavy. They're considered a starchy food you should limit to a quarter of your plate. Try again.`,
         messageRight: `Good job! Peas are an excellent food to add to your meal as long as you limit it to a quarter of your plate.`
     },
+    {
+        filename: 'starch-sweetpotato_qt',
+        name: 'Sweet Potato',
+        foodType: 'Starchy',
+        correctPortion: 'Quarter',
+        messageWrong: `Sweet potatoes are packed with vitamins, but they're still a starchy food. Try to limit to 1/4 of your plate. Try again.`,
+        messageRight: `Perfect! Sweet potatoes are packed with vitamins and minerals.`
+    },
+    {
+        filename: 'starch-bakedpotato_qt',
+        name: 'Baked Potato',
+        foodType: 'Starchy',
+        correctPortion: 'Quarter',
+        messageWrong: `Potatoes are a good source of vitamins and minerals, but they're still a starchy food. Try to limit to 1/4 of your plate. Try again.`,
+        messageRight: `Great! Limiting potatoes to a quarter of your plate is recommended.`
+    },
+    {
+        filename: 'starch-roll_qt',
+        name: 'Roll',
+        foodType: 'Starchy',
+        correctPortion: 'Quarter',
+        messageWrong: `Starchy foods like potatoes can be an easy food to make, but be sure to limit it to only a quarter of your plate. Try again.`,
+        messageRight: `Nice job! Though potatoes are an easy food to add to your meal, you definitely want to limit it to a quarter of your plate.`
+    },
+    {
+        filename: 'starch-corn_qt',
+        name: 'Corn on the Cob',
+        foodType: 'Starchy',
+        correctPortion: 'Quarter',
+        messageWrong: `Corn is a delicious side to any meal, but you want to be mindful of the sugar content. If it's on the cob, try cutting it in half. Try agin.`,
+        messageRight: `Great! Eating a smaller ear of corn or cutting a large one in half is a great way to manage portions.`
+    },
 
     // Fruits and Drinks
     {

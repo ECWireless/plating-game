@@ -63,6 +63,38 @@ export const BREAKFAST_ITEMS = [
         messageWrong: `Foods like waffles and pancakes are breakfast staples. Due to their starch content, you really only want it to fill a quarter of your plate. Try again.`,
         messageRight: 'Good! We know it feels strange not to fill your plate with a whole waffle or pancake, but you want to be especially careful. Be mindful of sugar syrups as well.'
     },
+    {
+        filename: 'bf_starch-muffin_qt',
+        name: 'Muffin',
+        foodType: 'Starchy',
+        correctPortion: 'Quarter',
+        messageWrong: `Muffins can be a tasty addition to breakfast, but you want to be careful. Stick to half a muffin. Try again.`,
+        messageRight: 'Great job! Muffins are high in carbohydrates, so you should stick to only half a muffin.'
+    },
+    {
+        filename: 'bf_starch-cereal_qt',
+        name: 'Cereal',
+        foodType: 'Starchy',
+        correctPortion: 'Quarter',
+        messageWrong: `Cereal tends to be high in sugar content, so you need to be cautious. Stick to 1/2 cup of sweetened or 3/4 cup of unsweetened cereal. Try again.`,
+        messageRight: `Great! Just remember to keep it at only 1/2 cup of sweetened cereal or 3/4 cup of unsweetened cereal.`
+    },
+    {
+        filename: 'bf_starch-bagel_qt',
+        name: 'Bagel',
+        foodType: 'Starchy',
+        correctPortion: 'Quarter',
+        messageWrong: `Bagels are really densely packed with carbohydrates. You should stick to 1/4 of a bagel. Try again.`,
+        messageRight: `Nicely done. Bagels are densely packed with carbohydrates, so you want to stick to only 1/4 of a bagel.`
+    },
+    {
+        filename: 'bf_starch-engmuffin_qt',
+        name: 'English Muffin',
+        foodType: 'Starchy',
+        correctPortion: 'Quarter',
+        messageWrong: `English muffins are a fine choice, but make sure you're only eating half due to its carbohydrate content. Try again.`,
+        messageRight: `Good! Sticking to only half an English muffin is best for controlling carbohydrate intake.`
+    },
 
     // Fruits and Drinks
     {
