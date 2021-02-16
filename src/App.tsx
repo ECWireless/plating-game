@@ -7,6 +7,7 @@ import { colors } from './components/theme'
 import PlatingCanvas from './components/PlatingCanvas'
 import Sidebar from './components/Sidebar'
 import SelectionBox from './components/SelectionBox'
+import { H1 } from './components/Typography'
 
 // Interfaces
 import { ICanvas, ISelectedItemData } from './components/faces'
@@ -369,6 +370,9 @@ function App() {
 				/>
 				<SelectionBox canvasItems={canvasItems} data={data} drag={(e: any) => drag(e)} />
 			</StyledGameContainer>
+			<StyledGameContainerMobile>
+				<H1>You must use a desktop to play this game.</H1>
+			</StyledGameContainerMobile>
 		</Wrapper>
 	);
 }
@@ -386,6 +390,24 @@ export default App;
 // 	`}
 // `
 
+const StyledGameContainerMobile = styled.div`
+	align-items: center;
+	background: #fff;
+	border: 2px solid ${colors.blue};
+	border-radius: 15px;
+	display: flex;
+	height: 40vh;
+	justify-content: center;
+	margin: 2rem auto;
+	padding: 1rem;
+	text-align: center;
+	width: 90%;
+
+	${media.md`
+		display: none;
+	`}
+`
+
 const StyledGameContainer = styled.div`
 	border: 2px solid ${colors.blue};
 	border-radius: 15px;
@@ -393,13 +415,14 @@ const StyledGameContainer = styled.div`
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	display: grid;
+	display: none;
 	grid-template-columns: 52rem 22rem;
 	grid-template-rows: 38rem;
     overflow: hidden;
 	position: absolute;
 
 	${media.md`
+		display: grid;
 		grid-template-columns: 66rem 30rem;
 		grid-template-rows: 42rem 15rem;
 	`}

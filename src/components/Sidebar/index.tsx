@@ -22,7 +22,6 @@ const Sidebar: React.FC<any> = ({
     setCanvasItems,
     setMealSelection,
 }) => {
-    console.log(answer)
 
     const onRemoveRecentItem = () => {
         setAnswer((prev: any) => ({
