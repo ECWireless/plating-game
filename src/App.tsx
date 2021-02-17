@@ -68,6 +68,16 @@ function App() {
 		e.dataTransfer.setData("text", e.target.id);
 	}
 	
+	const fetFoodType = (foodName: string) => {
+		let foodType = '';
+		data.forEach(item => {
+			if (item.filename === foodName) {
+				foodType = item.foodType
+			}
+		})
+		return foodType
+	}
+
 	const drop = (e: any) => {
 		e.preventDefault();
 		let idData = e.dataTransfer.getData("text");
@@ -124,7 +134,7 @@ function App() {
 
 			// Rules
 			setRecentItem('smallPortion1')
-			if (selectedItemData.correctPortion === 'Quarter') {
+			if (selectedItemData.correctPortion === 'Quarter' && selectedItemData.foodType !== fetFoodType(canvasItems.smallPortion2.item)) {
 				setAnswer(prev => ({
 					...prev,
 					answered: true,
@@ -150,7 +160,7 @@ function App() {
 			setRecentItem('smallPortion2')
 
 			// Rules
-			if (selectedItemData.correctPortion === 'Quarter') {
+			if (selectedItemData.correctPortion === 'Quarter' && selectedItemData.foodType !== fetFoodType(canvasItems.smallPortion1.item)) {
 				setAnswer(prev => ({
 					...prev,
 					answered: true,
