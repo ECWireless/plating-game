@@ -40,7 +40,7 @@ const PlatingCanvas: React.FC<any> = ({
                         onDragStart={() => onRemoveItem('largePortion')}
                         onClick={() => onRemoveItem('largePortion')}
                         draggable={"true"}
-                        style={{ backgroundImage: `url('/static/foods/${canvasItems.largePortion.item}.png')`}}
+                        style={{ backgroundImage: `url('static/foods/${canvasItems.largePortion.item}.png')`}}
                     />}
                 </StyledPlacement1>
                 <StyledPlacement2 id='placement-small-1' onDrop={drop} onDragOver={allowDrop}>
@@ -49,7 +49,7 @@ const PlatingCanvas: React.FC<any> = ({
                         onDragStart={() => onRemoveItem('smallPortion1')}
                         onClick={() => onRemoveItem('smallPortion1')}
                         draggable={"true"}
-                        style={{ backgroundImage: `url('/static/foods/${canvasItems.smallPortion1.item}.png')`}}
+                        style={{ backgroundImage: `url('static/foods/${canvasItems.smallPortion1.item}.png')`}}
                     />}
                 </StyledPlacement2>
                 <StyledPlacement3 id='placement-small-2' onDrop={drop} onDragOver={allowDrop}>
@@ -58,7 +58,7 @@ const PlatingCanvas: React.FC<any> = ({
                         onDragStart={() => onRemoveItem('smallPortion2')}
                         onClick={() => onRemoveItem('smallPortion2')}
                         draggable={"true"}
-                        style={{ backgroundImage: `url('/static/foods/${canvasItems.smallPortion2.item}.png')`}}
+                        style={{ backgroundImage: `url('static/foods/${canvasItems.smallPortion2.item}.png')`}}
                     />}
                 </StyledPlacement3>
             </StyledPlatePlacementContainer>
@@ -69,7 +69,7 @@ const PlatingCanvas: React.FC<any> = ({
                     onDragStart={() => onRemoveItem('cup')}
                     onClick={() => onRemoveItem('cup')}
                     draggable={"true"}
-                    style={{ backgroundImage: `url('/static/foods/${canvasItems.cup.item}.png')`}}
+                    style={{ backgroundImage: `url('static/foods/${canvasItems.cup.item}.png')`}}
                 />}
             </StyledPlacement4>
             {!canvasItems.bowl.active && <StyledBowl id='bowl' />}
@@ -79,7 +79,7 @@ const PlatingCanvas: React.FC<any> = ({
                     onDragStart={() => onRemoveItem('bowl')}
                     onClick={() => onRemoveItem('bowl')}
                     draggable={"true"}
-                    style={{ backgroundImage: `url('/static/foods/${canvasItems.bowl.item}.png')`}}
+                    style={{ backgroundImage: `url('static/foods/${canvasItems.bowl.item}.png')`}}
                 />}
             </StyledPlacement5>
             <StyledIndicatorPosition>

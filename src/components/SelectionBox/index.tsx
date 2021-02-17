@@ -47,7 +47,7 @@ const SelectionBox: React.FC<any> = ({
                                         id={`${filename}`}
                                         draggable={"true"}
                                         onDragStart={(e:any) => drag(e)}
-                                        style={{ backgroundImage: `url('/static/foods/${filename}.png')`}}
+                                        style={{ backgroundImage: `url('static/foods/${filename}.png')`}}
                                     />
                                 </StyledPhotoContainer>
                                 <StyledLabelContainer id="item-text">
@@ -60,7 +60,7 @@ const SelectionBox: React.FC<any> = ({
                                         id={`${filename}`}
                                         draggable={"true"}
                                         onDragStart={(e:any) => drag(e)}
-                                        style={{ backgroundImage: `url('/static/foods/${filename}.png')`}}
+                                        style={{ backgroundImage: `url('static/foods/${filename}.png')`}}
                                     />
                                 </StyledPhotoContainer>
                                 <StyledLabelContainer id="item-text">
