@@ -140,8 +140,8 @@ export const LINNER_ITEMS = [
         name: 'Roll',
         foodType: 'Starchy',
         correctPortion: 'Quarter',
-        messageWrong: `Starchy foods like potatoes can be an easy food to make, but be sure to limit it to only a quarter of your plate. Try again.`,
-        messageRight: `Nice job! Though potatoes are an easy food to add to your meal, you definitely want to limit it to a quarter of your plate.`
+        messageWrong: `Starchy foods like rolls can be an easy food to make, but be sure to limit it to only a quarter of your plate. Try again.`,
+        messageRight: `Nice job! Though rolls are an easy food to add to your meal, you definitely want to limit it to a quarter of your plate.`
     },
     {
         filename: 'starch-corn_qt',
