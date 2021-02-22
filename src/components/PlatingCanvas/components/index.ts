@@ -3,7 +3,7 @@ import { media } from '../../../components/Breakpoints'
 import { colors } from '../../../components/theme'
 
 export const StyledBowl = styled.div`
-    background-image: url('/static/fruit-cookie-outline.png');
+    background-image: url('static/outlines/fruit-cookie-outline.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -17,7 +17,7 @@ export const StyledBowl = styled.div`
 `
 
 export const StyledCup = styled.div`
-    background-image: url('/static/drink-outline.png');
+    background-image: url('static/outlines/drink-outline.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -38,7 +38,7 @@ export const StyledIndicatorPosition = styled.div`
 `
 
 export const StyledPhoto = styled.div`
-    background-image: url('/static/wood-texture_edited.png');
+    background-image: url('static/outlines/wood-texture_edited.png');
     background-position: center;
     background-size: cover;
     grid-column: 1 / -1;
@@ -175,7 +175,7 @@ export const StyledPlacement5 = styled.div`
 `
 
 export const StyledPlate = styled.div`
-    background-image: url('/static/plate.png');
+    background-image: url('static/outlines/plate.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
